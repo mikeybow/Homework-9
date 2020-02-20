@@ -1,8 +1,22 @@
 [
     {
-        "name": "Alice",
-        "Id": "",
+        "Name": "Alice",
+        "Id": "93957384",
         "Email": "alice_firstemployee@gmail.com",
         "Role": "Engineer"
+    },
+    
+    {
+        "Name": "John",
+        "Id": "85938759",
+        "Email": "john_secondemployee@gmail.com",
+        "Role": "Manager"
+    },
+
+    {
+        "Name": "Sarah",
+        "Id": "85027493",
+        "Email": "sarah_thirdemployee@gmail.com",
+        "Role": "Intern"
     }
 ]
