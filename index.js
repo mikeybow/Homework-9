@@ -1,29 +1,30 @@
 const fs = require("fs");
+const employeeData = require("./employee.js");
 
 fs.readFile("List.json", "utf8", function(err, data) {
     if(err) {
         throw err;
     }
 
-    const ListJSON = JSON.parse(data);
+    const employeeList = JSON.parse(data);
 
     const Name = [];
     const Id = [];
     const Email = [];
     const Role = [];
 
-    ListJSON.forEach(function(Employee) {
-        if(Employee.Name === "Alice") {
-            Name.push(Employee);
+    employeeList.forEach(function(employeeData) {
+        if(employeeData.Name === "Alice") {
+            Name.push(employeeData);
         }
-            else if (Employee.Id === "Alice") {
-                Email.push(Employee)
+            else if (employeeData.Id === "Alice") {
+                Email.push(employeeData)
             }
     });
 
-    const ListJSON = JSON.stringify(Employee, null, 2);
+    const ListJSON = JSON.stringify(employeeData, null, 2);
 
-    fs.writeFile("List.json", ListJSON, function(err) {
+    fs.writeFile("Employee.PDF", ListJSON, function(err) {
         if (err) {
           throw err;
         }

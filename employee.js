@@ -4,16 +4,13 @@ class Employee {
         this.Id = Id
         this.Email = Email
         this. Role = Role
+        this.printInfo = function() {return console.log(this.Name + " " + this.Id + " " + this.Email + " " + this.Role + " ")};
     }
 
-    printInfo() {
-        console.log(`Name: ${this.Name}`);
-        console.log(`Id: ${this.Id}`);
-        console.log(`Email: ${this.Email}`);
-        console.log(`Role: ${this.Role}`);
-    }
 }
 
-const e = new Employee()
+const e = new Employee("Alice", "93957384", "alice_firstemployee@gmail.com", "Engineer")
 
-Employee.printInfo();
+e.printInfo();
+
+module.exports = Employee
