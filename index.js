@@ -1,5 +1,8 @@
 const fs = require("fs");
 const employeeData = require("./employee.js");
+const pdf = require('html-pdf');
+const html = fs.readFileSync('./Employee.PDF', 'utf8');
+const options = { format: 'Letter' }; 
 
 fs.readFile("List.json", "utf8", function(err, data) {
     if(err) {
@@ -24,9 +27,8 @@ fs.readFile("List.json", "utf8", function(err, data) {
 
     const ListJSON = JSON.stringify(employeeData, null, 2);
 
-    fs.writeFile("Employee.PDF", ListJSON, function(err) {
-        if (err) {
-          throw err;
-        }
+    pdf.create(html, options).toFile('./Employee.PDF', function(err, res) {
+        if (err) return console.log(err);
+        console.log(res); // { filename: '/app/Employee.PDF' }
+      });
     });
-});
